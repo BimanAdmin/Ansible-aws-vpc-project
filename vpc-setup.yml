@@ -152,7 +152,7 @@
          - privsub1_out.subnet.id
          - privsub2_out.subnet.id
          - privsub3_out.subnet.id
-         - igw_out.gateway.id
+         - igw_out.gateway_id
          - PubRT_out.route_table.id
          - NATGW_out.nat_gateway_id
          - privRT_out.route_table.id
@@ -165,7 +165,7 @@
           privsub1id: "{{privsub1_out.subnet.id}}"
           privsub2id: "{{privsub2_out.subnet.id}}"
           privsub3id: "{{privsub3_out.subnet.id}}"
-          igwid: "{{igw_out.gateway.id}}"
+          igwid: "{{igw_out.gateway_id}}"
           PubRTid: "{{PubRT_out.route_table.id}}"
           NATGWid: "{{NATGW_out.nat_gateway_id}}"
           privRTid : "{{privRT_out.route_table.id}}"
