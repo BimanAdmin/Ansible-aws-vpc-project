@@ -15,7 +15,7 @@
         tenancy: default
         state: "{{state}}"
 
-      register: vpcoutk
+      register: vpcout
     - debug:
         var: vpcout
 
