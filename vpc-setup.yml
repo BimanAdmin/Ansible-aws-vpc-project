@@ -129,7 +129,7 @@
               if_exist_do_not_create: true
       register: NATGW_out
 
-    - name: setup private subnet route table
+    - name: Setup private subnet route table
       ec2_vpc_route_table:
               vpc_id: "{{vpcout.vpc.id}}"
               region: "{{region}}"
