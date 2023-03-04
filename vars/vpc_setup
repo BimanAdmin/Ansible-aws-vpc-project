@@ -24,3 +24,4 @@ state: present
 #Bastion vars
 bastion_ami: ami-006dcf34c09e50022
 MYIP: 103.211.54.176/32
+
