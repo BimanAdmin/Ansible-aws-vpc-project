@@ -9,7 +9,7 @@
         ec2_key:
           name: vprofile-key
           region: "{{region}}"
-      register: key_out
+        register: key_out
 
       - name: save private key information in bastion file
         copy:
