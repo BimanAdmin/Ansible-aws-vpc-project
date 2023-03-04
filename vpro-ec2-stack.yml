@@ -54,3 +54,15 @@
                      group_id: "{{BastionSGid}}"
          register: vprostackSG_out
 
+       - name: update security group with its own sg
+         ec2_group:
+              name: vproStack-sg
+              description: allow port 80 from everywhere
+              region: "{{region}}"
+              vpc_id: "{{vpcid}}"
+              purge_rules: no
+              rules:
+                  - proto: all
+                    group_id: "{{vprostackSG_out.group_id}}"
+
+
