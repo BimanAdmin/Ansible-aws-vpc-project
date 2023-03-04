@@ -1,9 +1,13 @@
-- hosts: localhost
+- name: setup bastion host
+  hosts: localhost
   connection: local
-  gather_facts: False
+  gather_facts: no
   tasks:
       - name: Import VPC variables
         include_vars: vars/bastion_setup
+
+      - name: Import vpc setup vaiable
+        include_vars: vars/output_vars
 
       - name: create a ec2 key
         ec2_key:
@@ -23,7 +27,7 @@
           name: Bastion-host-sg
           description: allow port 22 from everywhere
           region: "{{region}}"
-          vpc_id: "{{vpcid.vpc.id}}"
+          vpc_id: "{{vpcid}}"
           rules:
              - proto: tcp
                from_port: 22
