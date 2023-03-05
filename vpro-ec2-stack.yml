@@ -192,9 +192,9 @@
                       load_balancer_port: 80
                       instance_port: 80
 
-       - name: Insert/Update Hosts IP & Name in file provision-stack/group_vars/hostsip
+       - name: Insert/Update Hosts IP & Name in file provision-stack-new/group_vars/hostsip
          blockinfile:
-              path: provision-stack/group_vars/hostip
+              path: provision-stack-new/group_vars/hostip
               block: |
                     web01_ip: {{ web01_out.tagged_instances[0].private_ip }}
                     app01_ip: {{ app01_out.tagged_instances[0].private_ip }}
@@ -205,12 +205,12 @@
        - name: Copy login key to provision_stack directory
          copy:
               src: loginkey_vpro.pem
-              dest: provision-stack/loginkey_vpro.pem
+              dest: provision-stack-new/loginkey_vpro.pem
               mode: '0400'
 
-       - name: Insert/Update Inventory file provision-stack/inventory-vpro
+       - name: Insert/Update Inventory file provision-stack-new/inventory-vpro
          blockinfile:
-              path: provision-stack/group_vars/inventory-vpro
+              path: provision-stack-new/inventory-vpro
               block: |
                  web01 ansible_host={{ web01_out.tagged_instances[0].private_ip }}
                  app01 ansible_host={{ app01_out.tagged_instances[0].private_ip }}
