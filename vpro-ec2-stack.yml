@@ -115,7 +115,7 @@
               image: "{{memcache_ami}}"
               wait: yes
               wait_timeout: 300
-              nstance_tags:
+              instance_tags:
                      Name: "mc01"
                      Project: Vprofile
                      Owner: Devops Team
